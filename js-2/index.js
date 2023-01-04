@@ -1,43 +1,54 @@
-function hello(){
-    console.log('hello', this)
-}
+// function createCalcFunction(n){
+//     return function(){
+//         console.log(1000 * n)
+//     }
+// }
+// const calc = createCalcFunction(5)
+// console.log(calc)
+// calc()
 
-const person = {
-    name: 'Marat',
-    age:20,
-    sayHello: hello,
-    soyHelloWindow: hello.bind(document),
-    logInfo: function(job,phone){
-        console.group(`${this.name} info:`)
-        console.log(`Name is ${this.name}`)
-        console.log(`Name is ${this.age}`)
-        console.log(`Job is ${job}`)
-        console.log(`Phone is ${phone}`)
-        console.groupEnd()
+// function createIncrementor(n){
+//     return function(num){
+//         return n + num
+//     }
+// }
+// const addOne = createIncrementor(1)
+// const addTen = createIncrementor(10)
+
+// console.log(addOne(10))
+// console.log(addOne(41))
+
+// console.log(addTen(10))
+// console.log(addTen(41))
+
+// function urlGenerator(domain){
+//     return function(url){
+//         return `https://${url}.${domain}`
+//     }
+// }
+
+// const comUrl = urlGenerator('com')
+// const ruUrl = urlGenerator('ru')
+
+// console.log(comUrl('google'))
+// console.log(comUrl('netflix'))
+
+// console.log(ruUrl('yandex'))
+// console.log(ruUrl('vk'))
+
+
+function bind(context,fn){
+    return function(...args){
+        fn.apply(context,args)
     }
 }
 
-const lena = {
-    name: 'Elena',
-    age:23
+function logPerson(){
+    console.log(`Person: ${this.name}, ${this.age}, ${this.job}`)
 }
 
-// person.logInfo.bind(lena,'Frontend', '99-730-01-79')()
-// person.logInfo.call(lena,'Frontend', '99-730-01-79')
-person.logInfo.apply(lena,['Frontend', '99-730-01-79'])
+const person1 = {name:'Марат',age:20,job:'Frontend'}
+const person2 = {name:'Мах',age:20,job:'SMM'}
 
-const array = [1,2,3,4,5,6]
-
-// function multBy(arr,n){
-//     return arr.map(function(i){
-//         return i * n
-//     })
-// }
-
-Array.prototype.multBy = function(n){
-    return this.map(function(i){
-        return i * n
-    })
-}
-
-console.log(array.multBy(2))
+bind(person1, logPerson)()
+bind(person2, logPerson)()
