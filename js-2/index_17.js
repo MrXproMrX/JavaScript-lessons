@@ -8,19 +8,19 @@ const myNumber = 42
 
 
 const object = {
-    name: 'Max',
+    name: 'MrX',
     age:20
 }
 
-// localStorage.setItem('person', JSON.stringify(object))
+localStorage.setItem('person', JSON.stringify(object))
 
-const row = localStorage.getItem('person')
-const person = JSON.parse(row)
-person.name = 'Vladilen'
+// const row = localStorage.getItem('person')
+// const person = JSON.parse(row)
+// person.name = 'Vladilen'
 // console.log(person)
 
-// ==========================
+//==========================
 
-window.addEventListener('storage', event => {
-    console.log(event)
-})
+// window.addEventListener('storage', event => {
+//     console.log(event)
+// })
