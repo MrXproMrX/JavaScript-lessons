@@ -151,3 +151,79 @@
 //     counter++
 //     el.innerHTML = "Вы нажали на кнопку: " + counter
 // }
+
+
+// var text = document.getElementById('text');
+// text.title = "New text";
+// console.log(text.title);
+
+// text.style.color = "red";
+// text.style.backgroundColor = "blue";
+
+// text.innerHTML = "New <br> string"
+
+// var spans = document.getElementsByClassName('simple-text')
+
+// for(var i = 0; i < spans.length;i++){
+//     console.log(spans[i])
+// }
+
+// document.getElementById('main-form').addEventListener('submit',checkForm);
+// function checkForm(event){
+//   event.preventDefault();
+//   var el = document.getElementById('main-form'); 
+
+//   var name = el.name.value;
+//   var pass = el.pass.value;
+//   var repass = el.repass.value;
+//   var state = el.state.value;
+
+//   var fail = "";
+
+//   if(name == "" || pass == "" || state==""){
+//     fail = "Заполните все поля";
+//   }else if(name.length <=1 || name.length > 50){
+//     fail = "Введите коректщу имя";
+//   }else if(pass != repass){
+//     fail = "Пароли должны совподать";
+//   }else if(pass.split("&").length > 1){
+//     fail = "Некорректный пароль";
+//   }
+
+//   if(fail != ""){
+//     document.getElementById('error').innerHTML = fail
+//   }else{
+//     alert("Все данные корректно заполнены");
+//     window.location = "https://www.youtube.com/"
+//   }
+// }
+
+
+// var id = setInterval(my_func,100);
+// var counter = 0;
+// function my_func(){
+//     counter++;
+//     console.log("Counter:" + counter)
+
+//     if(counter == 20){
+//         clearInterval(id)
+//     }
+// }
+
+// var counter = 0;
+// setInterval(function(){
+//     counter++;
+//     console.log("Прошло секунд: " + counter)
+// },1500)
+
+// setTimeout(function(){
+//     console.log("Timer is workig!")
+// },2000)
+
+// var date = new Date();
+// console.log(date.getFullYear());
+// console.log(date.getMonth() + 1);
+// console.log(date.getDate());
+// console.log(date.getHours());
+// console.log(date.getMinutes());
+// console.log(date.getSeconds());
